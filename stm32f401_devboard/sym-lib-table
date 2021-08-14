@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name stm32f401_devboard-rescue)(type Legacy)(uri ${KIPRJMOD}/stm32f401_devboard-rescue.lib)(options "")(descr ""))
+)
