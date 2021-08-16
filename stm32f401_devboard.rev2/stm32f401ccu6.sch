@@ -1,0 +1,1173 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ST_STM32F4:STM32F401CCUx U1
+U 1 1 5F3FC3F0
+P 5500 3700
+F 0 "U1" H 5650 4300 50  0000 C CNN
+F 1 "STM32F401CCUx" H 5600 4800 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm" H 4900 2200 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00086815.pdf" H 5500 3700 50  0001 C CNN
+	1    5500 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5F3FE303
+P 5300 5400
+F 0 "#PWR0101" H 5300 5150 50  0001 C CNN
+F 1 "GND" H 5305 5227 50  0000 C CNN
+F 2 "" H 5300 5400 50  0001 C CNN
+F 3 "" H 5300 5400 50  0001 C CNN
+	1    5300 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 5300 5300 5350
+Wire Wire Line
+	5700 5300 5700 5350
+Wire Wire Line
+	5700 5350 5600 5350
+Connection ~ 5300 5350
+Wire Wire Line
+	5300 5350 5300 5400
+Wire Wire Line
+	5400 5300 5400 5350
+Connection ~ 5400 5350
+Wire Wire Line
+	5400 5350 5300 5350
+Wire Wire Line
+	5500 5300 5500 5350
+Connection ~ 5500 5350
+Wire Wire Line
+	5500 5350 5400 5350
+Wire Wire Line
+	5600 5300 5600 5350
+Connection ~ 5600 5350
+Wire Wire Line
+	5600 5350 5500 5350
+Wire Wire Line
+	4700 3700 4800 3700
+Wire Wire Line
+	4700 3800 4800 3800
+Wire Wire Line
+	4700 3900 4800 3900
+Wire Wire Line
+	4700 4000 4800 4000
+Wire Wire Line
+	4700 4100 4800 4100
+Wire Wire Line
+	4700 4200 4800 4200
+Wire Wire Line
+	4700 4300 4800 4300
+Wire Wire Line
+	4700 4400 4800 4400
+Wire Wire Line
+	4700 4500 4800 4500
+Wire Wire Line
+	4700 4600 4800 4600
+Wire Wire Line
+	4700 4700 4800 4700
+Wire Wire Line
+	4700 4800 4800 4800
+Wire Wire Line
+	4700 4900 4800 4900
+Wire Wire Line
+	4700 5000 4800 5000
+Wire Wire Line
+	4700 5100 4800 5100
+Wire Wire Line
+	6200 3600 6100 3600
+Wire Wire Line
+	6200 3700 6100 3700
+Wire Wire Line
+	6200 3800 6100 3800
+Wire Wire Line
+	6200 3900 6100 3900
+Wire Wire Line
+	6200 4000 6100 4000
+Wire Wire Line
+	6200 4100 6100 4100
+Wire Wire Line
+	6200 4200 6100 4200
+Wire Wire Line
+	6200 4300 6100 4300
+Wire Wire Line
+	6200 4400 6100 4400
+Wire Wire Line
+	6200 4500 6100 4500
+Wire Wire Line
+	6200 4600 6100 4600
+Wire Wire Line
+	6200 4700 6100 4700
+Wire Wire Line
+	6200 4800 6100 4800
+Wire Wire Line
+	6200 4900 6100 4900
+Wire Wire Line
+	6200 5000 6100 5000
+Wire Wire Line
+	6200 5100 6100 5100
+Wire Wire Line
+	4700 3500 4800 3500
+Wire Wire Line
+	4700 3400 4800 3400
+Wire Wire Line
+	4700 3300 4800 3300
+Wire Wire Line
+	4700 3100 4800 3100
+Wire Wire Line
+	4700 3000 4800 3000
+Wire Wire Line
+	4050 2500 4700 2500
+Text GLabel 4700 3700 0    50   Input ~ 0
+PB0
+Text GLabel 4700 3800 0    50   Input ~ 0
+PB1
+Text GLabel 4700 3900 0    50   Input ~ 0
+PB2
+Text GLabel 4700 4000 0    50   Input ~ 0
+PB3
+Text GLabel 4700 4100 0    50   Input ~ 0
+PB4
+Text GLabel 4700 4200 0    50   Input ~ 0
+PB5
+Text GLabel 4700 4300 0    50   Input ~ 0
+PB6
+Text GLabel 4700 4400 0    50   Input ~ 0
+PB7
+Text GLabel 4700 4500 0    50   Input ~ 0
+PB8
+Text GLabel 4700 4600 0    50   Input ~ 0
+PB9
+Text GLabel 4700 4700 0    50   Input ~ 0
+PB10
+Text GLabel 4700 4800 0    50   Input ~ 0
+PB12
+Text GLabel 4700 4900 0    50   Input ~ 0
+PB13
+Text GLabel 4700 5000 0    50   Input ~ 0
+PB14
+Text GLabel 4700 5100 0    50   Input ~ 0
+PB15
+Text GLabel 6200 3600 2    50   Input ~ 0
+PA0
+Text GLabel 6200 3700 2    50   Input ~ 0
+PA1
+Text GLabel 6200 3800 2    50   Input ~ 0
+PA2
+Text GLabel 6200 3900 2    50   Input ~ 0
+PA3
+Text GLabel 6200 4000 2    50   Input ~ 0
+PA4
+Text GLabel 6200 4100 2    50   Input ~ 0
+PA5
+Text GLabel 6200 4200 2    50   Input ~ 0
+PA6
+Text GLabel 6200 4300 2    50   Input ~ 0
+PA7
+Text GLabel 6200 4400 2    50   Input ~ 0
+PA8
+Text GLabel 6200 4500 2    50   Input ~ 0
+PA9
+Text GLabel 6200 4600 2    50   Input ~ 0
+PA10
+Text GLabel 6200 4700 2    50   Input ~ 0
+PA11
+Text GLabel 6200 4800 2    50   Input ~ 0
+PA12
+Text GLabel 6200 4900 2    50   Input ~ 0
+PA13
+Text GLabel 6200 5000 2    50   Input ~ 0
+PA14
+Text GLabel 6200 5100 2    50   Input ~ 0
+PA15
+Text GLabel 4700 3000 0    50   Input ~ 0
+PH0
+Text GLabel 4700 3100 0    50   Input ~ 0
+PH1
+Text GLabel 4700 3300 0    50   Input ~ 0
+PC13
+Text GLabel 4700 3400 0    50   Input ~ 0
+PC14
+Text GLabel 4700 3500 0    50   Input ~ 0
+PC15
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C3
+U 1 1 5F3EAAC0
+P 4400 2600
+F 0 "C3" H 4350 2550 50  0000 C CNN
+F 1 "2.2u" H 4550 2550 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4400 2130 60  0001 L CNN
+F 3 "" H 4400 2040 60  0001 L CNN
+F 4 "8-Jun-2000" H 4400 1950 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 4400 1860 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 4400 1770 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 4400 1680 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 4400 1590 60  0001 L CNN "Field8"
+F 9 "Yes" H 4400 1500 60  0001 L CNN "Field9"
+F 10 "100n" H 4450 2656 50  0001 C CNN "Field10"
+F 11 "=Value" H 4400 1320 60  0001 L CNN "Field11"
+	1    4400 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2700 4800 2700
+$Comp
+L power:GND #PWR0102
+U 1 1 5F3ECBFD
+P 4200 2700
+F 0 "#PWR0102" H 4200 2450 50  0001 C CNN
+F 1 "GND" V 4205 2572 50  0000 R CNN
+F 2 "" H 4200 2700 50  0001 C CNN
+F 3 "" H 4200 2700 50  0001 C CNN
+	1    4200 2700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 2700 4300 2700
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 5F3EF128
+P 2150 2950
+F 0 "Y1" V 1900 2900 50  0000 L CNN
+F 1 "12MHz" V 2400 2850 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 2150 2950 50  0001 C CNN
+F 3 "~" H 2150 2950 50  0001 C CNN
+	1    2150 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C1
+U 1 1 5F3F1A3B
+P 1650 2700
+F 0 "C1" H 1600 2650 50  0000 C CNN
+F 1 "15p" H 1850 2650 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1650 2230 60  0001 L CNN
+F 3 "" H 1650 2140 60  0001 L CNN
+F 4 "8-Jun-2000" H 1650 2050 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 1650 1960 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 1650 1870 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 1650 1780 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 1650 1690 60  0001 L CNN "Field8"
+F 9 "Yes" H 1650 1600 60  0001 L CNN "Field9"
+F 10 "100n" H 1700 2756 50  0001 C CNN "Field10"
+F 11 "=Value" H 1650 1420 60  0001 L CNN "Field11"
+	1    1650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C2
+U 1 1 5F3F2D38
+P 1650 3000
+F 0 "C2" H 1600 2850 50  0000 C CNN
+F 1 "15p" H 1800 2850 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1650 2530 60  0001 L CNN
+F 3 "" H 1650 2440 60  0001 L CNN
+F 4 "8-Jun-2000" H 1650 2350 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 1650 2260 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 1650 2170 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 1650 2080 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 1650 1990 60  0001 L CNN "Field8"
+F 9 "Yes" H 1650 1900 60  0001 L CNN "Field9"
+F 10 "100n" H 1850 2850 50  0001 C CNN "Field10"
+F 11 "=Value" H 1650 1720 60  0001 L CNN "Field11"
+	1    1650 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5F3F3ECC
+P 1350 2950
+F 0 "#PWR0103" H 1350 2700 50  0001 C CNN
+F 1 "GND" V 1355 2822 50  0000 R CNN
+F 2 "" H 1350 2950 50  0001 C CNN
+F 3 "" H 1350 2950 50  0001 C CNN
+	1    1350 2950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 2950 1450 2950
+Wire Wire Line
+	1550 2800 1450 2800
+Wire Wire Line
+	1450 2800 1450 2950
+Connection ~ 1450 2950
+Wire Wire Line
+	1450 2950 1950 2950
+Wire Wire Line
+	1550 3100 1450 3100
+Wire Wire Line
+	1450 3100 1450 2950
+Wire Wire Line
+	1850 2800 2150 2800
+Wire Wire Line
+	1850 3100 2150 3100
+Wire Wire Line
+	2150 2800 2700 2800
+Connection ~ 2150 2800
+Wire Wire Line
+	2150 3100 2700 3100
+Connection ~ 2150 3100
+$Comp
+L power:GND #PWR0104
+U 1 1 5F401451
+P 2450 2950
+F 0 "#PWR0104" H 2450 2700 50  0001 C CNN
+F 1 "GND" V 2455 2822 50  0000 R CNN
+F 2 "" H 2450 2950 50  0001 C CNN
+F 3 "" H 2450 2950 50  0001 C CNN
+	1    2450 2950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2350 2950 2450 2950
+Text GLabel 2700 2800 2    50   Input ~ 0
+PH0
+Text GLabel 2700 3100 2    50   Input ~ 0
+PH1
+$Comp
+L mybays_connector:CORTEX-DEBUGGER CON1
+U 1 1 5F404A1C
+P 9150 4850
+F 0 "CON1" H 9150 5317 50  0000 C CNN
+F 1 "CORTEX-DEBUGGER" H 9150 5226 50  0000 C CNN
+F 2 "mybays_connector:debugger_2x05_P1.27mm_Vertical" H 9150 4850 50  0001 C CNN
+F 3 "" H 9150 4850 50  0001 C CNN
+	1    9150 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 4850 8550 4850
+Wire Wire Line
+	8450 4950 8550 4950
+Wire Wire Line
+	8450 5050 8550 5050
+Wire Wire Line
+	9850 4650 9750 4650
+Wire Wire Line
+	9850 4750 9750 4750
+Wire Wire Line
+	9850 4850 9750 4850
+Wire Wire Line
+	9850 4950 9750 4950
+Wire Wire Line
+	9850 5050 9750 5050
+Text GLabel 8450 4850 0    50   Input ~ 0
+PA13
+Text GLabel 8450 4950 0    50   Input ~ 0
+PA14
+Text GLabel 3700 2300 0    50   Input ~ 0
+NRST
+Text GLabel 4050 2500 0    50   Input ~ 0
+BOOT0
+Text GLabel 9850 4650 2    50   Input ~ 0
+NRST
+Text GLabel 9850 4750 2    50   Input ~ 0
+PB3
+Text GLabel 9850 4950 2    50   Input ~ 0
+PA10
+Text GLabel 9850 5050 2    50   Input ~ 0
+PA9
+$Comp
+L power:GND #PWR0105
+U 1 1 5F41A8F5
+P 8450 5100
+F 0 "#PWR0105" H 8450 4850 50  0001 C CNN
+F 1 "GND" H 8455 4927 50  0000 C CNN
+F 2 "" H 8450 5100 50  0001 C CNN
+F 3 "" H 8450 5100 50  0001 C CNN
+	1    8450 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5F41AF51
+P 9850 4850
+F 0 "#PWR0106" H 9850 4600 50  0001 C CNN
+F 1 "GND" V 9855 4722 50  0000 R CNN
+F 2 "" H 9850 4850 50  0001 C CNN
+F 3 "" H 9850 4850 50  0001 C CNN
+	1    9850 4850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8450 5050 8450 5100
+$Comp
+L power:+3V3 #PWR0107
+U 1 1 5F41DC4F
+P 8250 4700
+F 0 "#PWR0107" H 8250 4550 50  0001 C CNN
+F 1 "+3V3" H 8265 4873 50  0000 C CNN
+F 2 "" H 8250 4700 50  0001 C CNN
+F 3 "" H 8250 4700 50  0001 C CNN
+	1    8250 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 4700 8250 4750
+Wire Wire Line
+	8250 4750 8550 4750
+$Comp
+L power:+3V3 #PWR0108
+U 1 1 5F420BDD
+P 5600 1950
+F 0 "#PWR0108" H 5600 1800 50  0001 C CNN
+F 1 "+3V3" H 5615 2123 50  0000 C CNN
+F 2 "" H 5600 1950 50  0001 C CNN
+F 3 "" H 5600 1950 50  0001 C CNN
+	1    5600 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2100 5600 2000
+Wire Wire Line
+	5600 2000 5500 2000
+Wire Wire Line
+	5400 2000 5400 2100
+Connection ~ 5600 2000
+Wire Wire Line
+	5600 2000 5600 1950
+Wire Wire Line
+	5500 2100 5500 2000
+Connection ~ 5500 2000
+Wire Wire Line
+	5500 2000 5400 2000
+$Comp
+L power:+BATT #PWR0109
+U 1 1 5F428AF3
+P 5300 1950
+F 0 "#PWR0109" H 5300 1800 50  0001 C CNN
+F 1 "+BATT" H 5315 2123 50  0000 C CNN
+F 2 "" H 5300 1950 50  0001 C CNN
+F 3 "" H 5300 1950 50  0001 C CNN
+	1    5300 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 1950 5300 2100
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C4
+U 1 1 5F42FA80
+P 1650 3500
+F 0 "C4" H 1600 3450 50  0000 C CNN
+F 1 "15p" H 1850 3450 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1650 3030 60  0001 L CNN
+F 3 "" H 1650 2940 60  0001 L CNN
+F 4 "8-Jun-2000" H 1650 2850 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 1650 2760 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 1650 2670 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 1650 2580 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 1650 2490 60  0001 L CNN "Field8"
+F 9 "Yes" H 1650 2400 60  0001 L CNN "Field9"
+F 10 "100n" H 1700 3556 50  0001 C CNN "Field10"
+F 11 "=Value" H 1650 2220 60  0001 L CNN "Field11"
+	1    1650 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C5
+U 1 1 5F42FA8E
+P 1650 3800
+F 0 "C5" H 1600 3650 50  0000 C CNN
+F 1 "15p" H 1800 3650 60  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1650 3330 60  0001 L CNN
+F 3 "" H 1650 3240 60  0001 L CNN
+F 4 "8-Jun-2000" H 1650 3150 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 1650 3060 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 1650 2970 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 1650 2880 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 1650 2790 60  0001 L CNN "Field8"
+F 9 "Yes" H 1650 2700 60  0001 L CNN "Field9"
+F 10 "100n" H 1850 3650 50  0001 C CNN "Field10"
+F 11 "=Value" H 1650 2520 60  0001 L CNN "Field11"
+	1    1650 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5F42FA94
+P 1350 3750
+F 0 "#PWR0110" H 1350 3500 50  0001 C CNN
+F 1 "GND" V 1355 3622 50  0000 R CNN
+F 2 "" H 1350 3750 50  0001 C CNN
+F 3 "" H 1350 3750 50  0001 C CNN
+	1    1350 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1350 3750 1450 3750
+Wire Wire Line
+	1550 3600 1450 3600
+Wire Wire Line
+	1450 3600 1450 3750
+Connection ~ 1450 3750
+Wire Wire Line
+	1550 3900 1450 3900
+Wire Wire Line
+	1450 3900 1450 3750
+Text GLabel 2700 3600 2    50   Input ~ 0
+PC15
+Text GLabel 2700 3900 2    50   Input ~ 0
+PC14
+$Comp
+L Device:Crystal Y2
+U 1 1 5F433686
+P 2150 3750
+F 0 "Y2" V 2104 3881 50  0000 L CNN
+F 1 "32.768K" V 2195 3881 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm" H 2150 3750 50  0001 C CNN
+F 3 "~" H 2150 3750 50  0001 C CNN
+	1    2150 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 3600 2150 3600
+Wire Wire Line
+	1850 3900 2150 3900
+Connection ~ 2150 3600
+Wire Wire Line
+	2150 3600 2700 3600
+Connection ~ 2150 3900
+Wire Wire Line
+	2150 3900 2700 3900
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C6
+U 1 1 5F438319
+P 4400 2050
+F 0 "C6" H 4350 2000 50  0000 C CNN
+F 1 "1u" H 4600 2000 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder" H 4400 1580 60  0001 L CNN
+F 3 "" H 4400 1490 60  0001 L CNN
+F 4 "8-Jun-2000" H 4400 1400 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 4400 1310 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 4400 1220 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 4400 1130 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 4400 1040 60  0001 L CNN "Field8"
+F 9 "Yes" H 4400 950 60  0001 L CNN "Field9"
+F 10 "100n" H 4450 2106 50  0001 C CNN "Field10"
+F 11 "=Value" H 4400 770 60  0001 L CNN "Field11"
+	1    4400 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2150 4700 2150
+Wire Wire Line
+	4700 2150 4700 2300
+Connection ~ 4700 2300
+Wire Wire Line
+	4700 2300 4800 2300
+$Comp
+L power:GND #PWR0111
+U 1 1 5F4490A2
+P 4250 1750
+F 0 "#PWR0111" H 4250 1500 50  0001 C CNN
+F 1 "GND" H 4255 1577 50  0000 C CNN
+F 2 "" H 4250 1750 50  0001 C CNN
+F 3 "" H 4250 1750 50  0001 C CNN
+	1    4250 1750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4250 1750 4250 1800
+Wire Wire Line
+	4250 2150 4300 2150
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R2
+U 1 1 5F450F02
+P 4350 2300
+F 0 "R2" H 4350 2250 50  0000 C CNN
+F 1 "10k" H 4550 2250 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4350 1890 60  0001 L CNN
+F 3 "" H 4350 1800 60  0001 L CNN
+F 4 "8-Jun-2000" H 4350 1710 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 4350 1620 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 4350 1530 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 4350 1440 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 4350 1350 60  0001 L CNN "Field8"
+F 9 "100" H 4450 2296 50  0001 C CNN "Field9"
+F 10 "Yes" H 4350 1170 60  0001 L CNN "Field10"
+F 11 "=Value" H 4350 1080 60  0001 L CNN "Field11"
+	1    4350 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 2400 4700 2400
+Wire Wire Line
+	4700 2400 4700 2500
+Connection ~ 4700 2500
+Wire Wire Line
+	4700 2500 4800 2500
+$Comp
+L power:GND #PWR0112
+U 1 1 5F4561EA
+P 4200 2400
+F 0 "#PWR0112" H 4200 2150 50  0001 C CNN
+F 1 "GND" V 4205 2272 50  0000 R CNN
+F 2 "" H 4200 2400 50  0001 C CNN
+F 3 "" H 4200 2400 50  0001 C CNN
+	1    4200 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 2400 4250 2400
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R1
+U 1 1 5F45A583
+P 4050 1200
+F 0 "R1" H 4050 1150 50  0000 C CNN
+F 1 "10k" H 4250 1150 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4050 790 60  0001 L CNN
+F 3 "" H 4050 700 60  0001 L CNN
+F 4 "8-Jun-2000" H 4050 610 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 4050 520 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 4050 430 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 4050 340 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 4050 250 60  0001 L CNN "Field8"
+F 9 "100" H 4150 1196 50  0001 C CNN "Field9"
+F 10 "Yes" H 4050 70  60  0001 L CNN "Field10"
+F 11 "=Value" H 4050 -20 60  0001 L CNN "Field11"
+	1    4050 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 5F45B996
+P 4400 1350
+F 0 "#PWR0113" H 4400 1100 50  0001 C CNN
+F 1 "GND" H 4405 1177 50  0000 C CNN
+F 2 "" H 4400 1350 50  0001 C CNN
+F 3 "" H 4400 1350 50  0001 C CNN
+	1    4400 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 1300 3950 1300
+Wire Wire Line
+	4350 1300 4400 1300
+Wire Wire Line
+	4400 1300 4400 1350
+Text GLabel 3850 1300 0    50   Input ~ 0
+PB2
+Text Notes 3550 800  0    50   ~ 0
+BOOT0,BOOT1(PB2) default to GND\nBOOT1/BOOT0=x,0:Main Flash Memory\nBOOT1/BOOT0=0,1:System memory(BOOTROM)\nBOOT1/BOOT0=1,1:Embeded SRAM
+Text Notes 950  850  0    50   ~ 0
+USB:\nDM:PA11\nDP:PA12
+$Comp
+L power:GND #PWR0114
+U 1 1 5FC7AAC0
+P 800 3450
+F 0 "#PWR0114" H 800 3200 50  0001 C CNN
+F 1 "GND" V 805 3322 50  0000 R CNN
+F 2 "" H 800 3450 50  0001 C CNN
+F 3 "" H 800 3450 50  0001 C CNN
+	1    800  3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 1300 1500 1350
+$Comp
+L power:+5V #PWR0115
+U 1 1 5FC8C9A6
+P 1500 1300
+F 0 "#PWR0115" H 1500 1150 50  0001 C CNN
+F 1 "+5V" H 1515 1473 50  0000 C CNN
+F 2 "" H 1500 1300 50  0001 C CNN
+F 3 "" H 1500 1300 50  0001 C CNN
+	1    1500 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 2150 1450 2150
+Wire Wire Line
+	1500 1850 1450 1850
+Text GLabel 1500 2150 2    50   Input ~ 0
+PA11
+Text GLabel 1500 1850 2    50   Input ~ 0
+PA12
+$Comp
+L Regulator_Linear:LM1117-3.3 U2
+U 1 1 5FCA0EAE
+P 2100 1350
+F 0 "U2" H 2100 1592 50  0000 C CNN
+F 1 "LM1117-3.3" H 2100 1501 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 2100 1350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 2100 1350 50  0001 C CNN
+	1    2100 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 1350 1800 1350
+$Comp
+L power:GND #PWR0116
+U 1 1 5FCA753A
+P 2100 1700
+F 0 "#PWR0116" H 2100 1450 50  0001 C CNN
+F 1 "GND" V 2105 1572 50  0000 R CNN
+F 2 "" H 2100 1700 50  0001 C CNN
+F 3 "" H 2100 1700 50  0001 C CNN
+	1    2100 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 1650 2100 1700
+Wire Wire Line
+	2500 1350 2400 1350
+Wire Wire Line
+	2500 1300 2500 1350
+$Comp
+L power:+3V3 #PWR0117
+U 1 1 5FCBB0D1
+P 2500 1300
+F 0 "#PWR0117" H 2500 1150 50  0001 C CNN
+F 1 "+3V3" H 2515 1473 50  0000 C CNN
+F 2 "" H 2500 1300 50  0001 C CNN
+F 3 "" H 2500 1300 50  0001 C CNN
+	1    2500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R6
+U 1 1 5FCBD4AF
+P 4600 2900
+F 0 "R6" H 4600 2850 50  0000 C CNN
+F 1 "10k" H 4800 2850 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4600 2490 60  0001 L CNN
+F 3 "" H 4600 2400 60  0001 L CNN
+F 4 "8-Jun-2000" H 4600 2310 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 4600 2220 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 4600 2130 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 4600 2040 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 4600 1950 60  0001 L CNN "Field8"
+F 9 "100" H 4700 2896 50  0001 C CNN "Field9"
+F 10 "Yes" H 4600 1770 60  0001 L CNN "Field10"
+F 11 "=Value" H 4600 1680 60  0001 L CNN "Field11"
+	1    4600 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 5FCBEA05
+P 4000 2800
+F 0 "L1" V 3950 2900 50  0000 C CNN
+F 1 "0" V 3950 2750 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4000 2800 50  0001 C CNN
+F 3 "~" H 4000 2800 50  0001 C CNN
+	1    4000 2800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4150 2800 4300 2800
+Wire Wire Line
+	4700 2800 4800 2800
+$Comp
+L power:+3V3 #PWR0118
+U 1 1 5FCD063B
+P 3600 2750
+F 0 "#PWR0118" H 3600 2600 50  0001 C CNN
+F 1 "+3V3" H 3615 2923 50  0000 C CNN
+F 2 "" H 3600 2750 50  0001 C CNN
+F 3 "" H 3600 2750 50  0001 C CNN
+	1    3600 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 2750 3600 2800
+Wire Wire Line
+	3600 2800 3850 2800
+Wire Wire Line
+	5600 1200 5750 1200
+$Comp
+L power:+3V3 #PWR0119
+U 1 1 5FCECAF3
+P 6250 1150
+F 0 "#PWR0119" H 6250 1000 50  0001 C CNN
+F 1 "+3V3" H 6265 1323 50  0000 C CNN
+F 2 "" H 6250 1150 50  0001 C CNN
+F 3 "" H 6250 1150 50  0001 C CNN
+	1    6250 1150
+	1    0    0    -1  
+$EndComp
+Text GLabel 5600 1200 0    50   Input ~ 0
+BOOT0
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5FCEE01C
+P 4150 2050
+F 0 "SW1" V 4150 2100 50  0000 R CNN
+F 1 "SW_Push" V 4105 2002 50  0001 R CNN
+F 2 "mybays_connector:turtlekey" H 4150 2250 50  0001 C CNN
+F 3 "~" H 4150 2250 50  0001 C CNN
+	1    4150 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4150 1850 4150 1800
+Wire Wire Line
+	4150 1800 4250 1800
+Connection ~ 4250 1800
+Wire Wire Line
+	4250 1800 4250 2150
+Wire Wire Line
+	4150 2250 4150 2300
+Connection ~ 4150 2300
+Wire Wire Line
+	4150 2300 4700 2300
+$Comp
+L power:+3V3 #PWR0120
+U 1 1 5FD2BB4F
+P 2700 5350
+F 0 "#PWR0120" H 2700 5200 50  0001 C CNN
+F 1 "+3V3" H 2715 5523 50  0000 C CNN
+F 2 "" H 2700 5350 50  0001 C CNN
+F 3 "" H 2700 5350 50  0001 C CNN
+	1    2700 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 5450 2700 5350
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R3
+U 1 1 5FD359DC
+P 2050 5350
+F 0 "R3" H 2050 5300 50  0000 C CNN
+F 1 "10k" H 2250 5300 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2050 4940 60  0001 L CNN
+F 3 "" H 2050 4850 60  0001 L CNN
+F 4 "8-Jun-2000" H 2050 4760 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 2050 4670 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 2050 4580 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 2050 4490 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 2050 4400 60  0001 L CNN "Field8"
+F 9 "100" H 2150 5346 50  0001 C CNN "Field9"
+F 10 "Yes" H 2050 4220 60  0001 L CNN "Field10"
+F 11 "=Value" H 2050 4130 60  0001 L CNN "Field11"
+	1    2050 5350
+	-1   0    0    1   
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R5
+U 1 1 5FD3697D
+P 2050 5750
+F 0 "R5" H 2050 5700 50  0000 C CNN
+F 1 "10k" H 2250 5700 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2050 5340 60  0001 L CNN
+F 3 "" H 2050 5250 60  0001 L CNN
+F 4 "8-Jun-2000" H 2050 5160 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 2050 5070 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 2050 4980 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 2050 4890 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 2050 4800 60  0001 L CNN "Field8"
+F 9 "100" H 2150 5746 50  0001 C CNN "Field9"
+F 10 "Yes" H 2050 4620 60  0001 L CNN "Field10"
+F 11 "=Value" H 2050 4530 60  0001 L CNN "Field11"
+	1    2050 5750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2150 5250 2250 5250
+Wire Wire Line
+	2150 5650 2250 5650
+$Comp
+L power:GND #PWR0121
+U 1 1 5FD4A1EE
+P 1600 5250
+F 0 "#PWR0121" H 1600 5000 50  0001 C CNN
+F 1 "GND" V 1605 5122 50  0000 R CNN
+F 2 "" H 1600 5250 50  0001 C CNN
+F 3 "" H 1600 5250 50  0001 C CNN
+	1    1600 5250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1600 5250 1750 5250
+Wire Wire Line
+	1650 5650 1750 5650
+Text GLabel 1650 5650 0    50   Input ~ 0
+PC13
+Wire Wire Line
+	3700 2300 4150 2300
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C8
+U 1 1 5FD9BF17
+P 2600 1750
+F 0 "C8" H 2550 1700 50  0000 C CNN
+F 1 "1u" H 2800 1700 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder" H 2600 1280 60  0001 L CNN
+F 3 "" H 2600 1190 60  0001 L CNN
+F 4 "8-Jun-2000" H 2600 1100 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 2600 1010 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 2600 920 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 2600 830 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 2600 740 60  0001 L CNN "Field8"
+F 9 "Yes" H 2600 650 60  0001 L CNN "Field9"
+F 10 "100n" H 2650 1806 50  0001 C CNN "Field10"
+F 11 "=Value" H 2600 470 60  0001 L CNN "Field11"
+	1    2600 1750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C9
+U 1 1 5FD9C290
+P 3000 1650
+F 0 "C9" H 2950 1600 50  0000 C CNN
+F 1 "1u" H 3200 1600 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder" H 3000 1180 60  0001 L CNN
+F 3 "" H 3000 1090 60  0001 L CNN
+F 4 "8-Jun-2000" H 3000 1000 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 3000 910 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 3000 820 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 3000 730 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 3000 640 60  0001 L CNN "Field8"
+F 9 "Yes" H 3000 550 60  0001 L CNN "Field9"
+F 10 "100n" H 3050 1706 50  0001 C CNN "Field10"
+F 11 "=Value" H 3000 370 60  0001 L CNN "Field11"
+	1    3000 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R7
+U 1 1 5FE34597
+P 7800 900
+F 0 "R7" H 7800 850 50  0000 C CNN
+F 1 "10k" H 8000 850 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 7800 490 60  0001 L CNN
+F 3 "" H 7800 400 60  0001 L CNN
+F 4 "8-Jun-2000" H 7800 310 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 7800 220 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 7800 130 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 7800 40  60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 7800 -50 60  0001 L CNN "Field8"
+F 9 "100" H 7900 896 50  0001 C CNN "Field9"
+F 10 "Yes" H 7800 -230 60  0001 L CNN "Field10"
+F 11 "=Value" H 7800 -320 60  0001 L CNN "Field11"
+	1    7800 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5FE355CB
+P 8400 1000
+F 0 "SW2" V 8400 1050 50  0000 R CNN
+F 1 "SW_Push" V 8355 952 50  0001 R CNN
+F 2 "mybays_connector:turtlekey" H 8400 1200 50  0001 C CNN
+F 3 "~" H 8400 1200 50  0001 C CNN
+	1    8400 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0133
+U 1 1 5FE368BC
+P 8700 1100
+F 0 "#PWR0133" H 8700 850 50  0001 C CNN
+F 1 "GND" H 8705 927 50  0000 C CNN
+F 2 "" H 8700 1100 50  0001 C CNN
+F 3 "" H 8700 1100 50  0001 C CNN
+	1    8700 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8600 1000 8700 1000
+Wire Wire Line
+	8700 1000 8700 1100
+Wire Wire Line
+	8200 1000 8100 1000
+Wire Wire Line
+	7650 1000 7700 1000
+Text GLabel 7650 1000 0    50   Input ~ 0
+PA0
+$Comp
+L Switch:SW_Push SW3
+U 1 1 5FE52056
+P 5950 1200
+F 0 "SW3" V 5950 1250 50  0000 R CNN
+F 1 "SW_Push" V 5905 1152 50  0001 R CNN
+F 2 "mybays_connector:turtlekey" H 5950 1400 50  0001 C CNN
+F 3 "~" H 5950 1400 50  0001 C CNN
+	1    5950 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 1150 6250 1200
+Wire Wire Line
+	6250 1200 6150 1200
+$Comp
+L Device:LED D1
+U 1 1 600DCB3B
+P 2400 5250
+F 0 "D1" H 2393 5467 50  0000 C CNN
+F 1 "LED" H 2393 5376 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2400 5250 50  0001 C CNN
+F 3 "~" H 2400 5250 50  0001 C CNN
+	1    2400 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 600ED35B
+P 2400 5650
+F 0 "D3" H 2393 5867 50  0000 C CNN
+F 1 "LED" H 2393 5776 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2400 5650 50  0001 C CNN
+F 3 "~" H 2400 5650 50  0001 C CNN
+	1    2400 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 5650 2600 5650
+Wire Wire Line
+	2600 5650 2600 5450
+Connection ~ 2600 5450
+Wire Wire Line
+	2600 5450 2700 5450
+Wire Wire Line
+	2600 5450 2600 5250
+Wire Wire Line
+	2600 5250 2550 5250
+Connection ~ 2500 1350
+Wire Wire Line
+	2500 1350 2700 1350
+$Comp
+L power:GND #PWR0130
+U 1 1 60185FC6
+P 2700 1950
+F 0 "#PWR0130" H 2700 1700 50  0001 C CNN
+F 1 "GND" V 2705 1822 50  0000 R CNN
+F 2 "" H 2700 1950 50  0001 C CNN
+F 3 "" H 2700 1950 50  0001 C CNN
+	1    2700 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1550 2500 1350
+Wire Wire Line
+	2500 1850 2500 1900
+Wire Wire Line
+	2500 1900 2700 1900
+Wire Wire Line
+	2700 1900 2700 1950
+Wire Wire Line
+	2700 1850 2700 1900
+Connection ~ 2700 1900
+Wire Wire Line
+	2700 1350 2700 1550
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C7
+U 1 1 5FD9AD39
+P 2400 1750
+F 0 "C7" H 2350 1700 50  0000 C CNN
+F 1 "1u" H 2600 1700 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder" H 2400 1280 60  0001 L CNN
+F 3 "" H 2400 1190 60  0001 L CNN
+F 4 "8-Jun-2000" H 2400 1100 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 2400 1010 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 2400 920 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 2400 830 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 2400 740 60  0001 L CNN "Field8"
+F 9 "Yes" H 2400 650 60  0001 L CNN "Field9"
+F 10 "100n" H 2450 1806 50  0001 C CNN "Field10"
+F 11 "=Value" H 2400 470 60  0001 L CNN "Field11"
+	1    2400 1750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2700 1350 2900 1350
+Wire Wire Line
+	2900 1350 2900 1550
+Connection ~ 2700 1350
+Wire Wire Line
+	2900 1850 2900 1900
+Wire Wire Line
+	2900 1900 2700 1900
+Wire Wire Line
+	800  2850 800  3300
+$Comp
+L mybays_connector:USB_C J1
+U 1 1 6119BC2A
+P 800 1950
+F 0 "J1" H 907 2817 50  0000 C CNN
+F 1 "USB_C" H 907 2726 50  0000 C CNN
+F 2 "mybays_connector:USB_C" H 950 1950 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 950 1950 50  0001 C CNN
+	1    800  1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1350 1500 1350
+Connection ~ 1500 1350
+Wire Wire Line
+	1400 1950 1450 1950
+Wire Wire Line
+	1450 1950 1450 1850
+Connection ~ 1450 1850
+Wire Wire Line
+	1450 1850 1400 1850
+Wire Wire Line
+	1400 2050 1450 2050
+Wire Wire Line
+	1450 2050 1450 2150
+Connection ~ 1450 2150
+Wire Wire Line
+	1450 2150 1400 2150
+NoConn ~ 8550 4650
+$Comp
+L stm32f401_devboard-rescue:Cap-dsi_shield C10
+U 1 1 61262FF9
+P 600 2750
+F 0 "C10" H 550 2700 50  0000 C CNN
+F 1 "15p" H 800 2700 60  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 600 2280 60  0001 L CNN
+F 3 "" H 600 2190 60  0001 L CNN
+F 4 "8-Jun-2000" H 600 2100 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 600 2010 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 600 1920 60  0001 L CNN "Field6"
+F 7 "RAD-0.3" H 600 1830 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 600 1740 60  0001 L CNN "Field8"
+F 9 "Yes" H 600 1650 60  0001 L CNN "Field9"
+F 10 "100n" H 650 2806 50  0001 C CNN "Field10"
+F 11 "=Value" H 600 1470 60  0001 L CNN "Field11"
+	1    600  2750
+	1    0    0    -1  
+$EndComp
+Connection ~ 800  2850
+Connection ~ 500  2850
+$Comp
+L stm32f401_devboard-rescue:Res1-dsi_shield R4
+U 1 1 6126DBCF
+P 600 2950
+F 0 "R4" H 600 2900 50  0000 C CNN
+F 1 "10k" H 800 2900 60  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 600 2540 60  0001 L CNN
+F 3 "" H 600 2450 60  0001 L CNN
+F 4 "8-Jun-2000" H 600 2360 60  0001 L CNN "Field4"
+F 5 "17-Jul-2002" H 600 2270 60  0001 L CNN "Field5"
+F 6 "Re-released for DXP Platform." H 600 2180 60  0001 L CNN "Field6"
+F 7 "AXIAL-0.3" H 600 2090 60  0001 L CNN "Field7"
+F 8 "Altium Limited" H 600 2000 60  0001 L CNN "Field8"
+F 9 "100" H 700 2946 50  0001 C CNN "Field9"
+F 10 "Yes" H 600 1820 60  0001 L CNN "Field10"
+F 11 "=Value" H 600 1730 60  0001 L CNN "Field11"
+	1    600  2950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	500  3250 500  3300
+Wire Wire Line
+	500  3300 800  3300
+Connection ~ 800  3300
+Wire Wire Line
+	800  3300 800  3450
+$EndSCHEMATC
