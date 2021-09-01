@@ -695,9 +695,9 @@ Wire Wire Line
 Wire Wire Line
 	1500 1850 1450 1850
 Text GLabel 1500 2150 2    50   Input ~ 0
-PA11
-Text GLabel 1500 1850 2    50   Input ~ 0
 PA12
+Text GLabel 1500 1850 2    50   Input ~ 0
+PA11
 $Comp
 L Regulator_Linear:LM1117-3.3 U2
 U 1 1 5FCA0EAE
@@ -744,7 +744,7 @@ L stm32f401_devboard-rescue:Res1-dsi_shield R6
 U 1 1 5FCBD4AF
 P 4600 2900
 F 0 "R6" H 4600 2850 50  0000 C CNN
-F 1 "10k" H 4800 2850 60  0000 C CNN
+F 1 "0" H 4800 2850 60  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" H 4600 2490 60  0001 L CNN
 F 3 "" H 4600 2400 60  0001 L CNN
 F 4 "8-Jun-2000" H 4600 2310 60  0001 L CNN "Field4"

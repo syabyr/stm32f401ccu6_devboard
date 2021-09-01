@@ -277,8 +277,6 @@ Text GLabel 6050 2800 2    50   Input ~ 0
 PB7
 Text GLabel 6050 2900 2    50   Input ~ 0
 PB9
-Text GLabel 6050 3000 2    50   Input ~ 0
-PB11
 Text GLabel 6050 3100 2    50   Input ~ 0
 PB13
 Text GLabel 6050 3200 2    50   Input ~ 0
@@ -369,6 +367,17 @@ F 1 "+3V3" V 6065 2428 50  0000 L CNN
 F 2 "" H 6050 2300 50  0001 C CNN
 F 3 "" H 6050 2300 50  0001 C CNN
 	1    6050 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+BATT #PWR?
+U 1 1 612ABFA8
+P 6050 3000
+F 0 "#PWR?" H 6050 2850 50  0001 C CNN
+F 1 "+BATT" V 6065 3128 50  0000 L CNN
+F 2 "" H 6050 3000 50  0001 C CNN
+F 3 "" H 6050 3000 50  0001 C CNN
+	1    6050 3000
 	0    1    1    0   
 $EndComp
 $EndSCHEMATC

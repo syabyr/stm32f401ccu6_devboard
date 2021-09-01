@@ -695,9 +695,9 @@ Wire Wire Line
 Wire Wire Line
 	1500 1850 1450 1850
 Text GLabel 1500 2150 2    50   Input ~ 0
-PA11
-Text GLabel 1500 1850 2    50   Input ~ 0
 PA12
+Text GLabel 1500 1850 2    50   Input ~ 0
+PA11
 $Comp
 L Regulator_Linear:LM1117-3.3 U2
 U 1 1 5FCA0EAE
@@ -1124,10 +1124,10 @@ Wire Wire Line
 	1450 2150 1400 2150
 NoConn ~ 8550 4650
 $Comp
-L stm32f401_devboard-rescue:Cap-dsi_shield C?
+L stm32f401_devboard-rescue:Cap-dsi_shield C10
 U 1 1 61262FF9
 P 600 2750
-F 0 "C?" H 550 2700 50  0000 C CNN
+F 0 "C10" H 550 2700 50  0000 C CNN
 F 1 "15p" H 800 2700 60  0000 C CNN
 F 2 "Capacitor_SMD:C_0402_1005Metric" H 600 2280 60  0001 L CNN
 F 3 "" H 600 2190 60  0001 L CNN
@@ -1145,10 +1145,10 @@ $EndComp
 Connection ~ 800  2850
 Connection ~ 500  2850
 $Comp
-L stm32f401_devboard-rescue:Res1-dsi_shield R?
+L stm32f401_devboard-rescue:Res1-dsi_shield R4
 U 1 1 6126DBCF
 P 600 2950
-F 0 "R?" H 600 2900 50  0000 C CNN
+F 0 "R4" H 600 2900 50  0000 C CNN
 F 1 "10k" H 800 2900 60  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" H 600 2540 60  0001 L CNN
 F 3 "" H 600 2450 60  0001 L CNN
