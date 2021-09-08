@@ -1,0 +1,51 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Cap-dsi_shield
+#
+DEF Cap-dsi_shield C 0 60 Y Y 1 L N
+F0 "C" -10 -10 50 H V L BNN
+F1 "Cap-dsi_shield" 0 -380 60 H I L CNN
+F2 "" 0 -470 60 H I L CNN
+F3 "" 0 -560 60 H I L CNN
+F4 "8-Jun-2000" 0 -650 60 H I L CNN
+F5 "17-Jul-2002" 0 -740 60 H I L CNN
+F6 "Re-released for DXP Platform." 0 -830 60 H I L CNN
+F7 "RAD-0.3" 0 -920 60 H I L CNN
+F8 "Altium Limited" 0 -1010 60 H I L CNN
+F9 "Yes" 0 -1100 60 H I L CNN
+F10 "100n" -10 -290 50 H V L BNN
+F11 "=Value" 0 -1280 60 H I L CNN
+DRAW
+P 2 0 1 10 0 -100 30 -100 N
+P 2 0 1 10 30 -180 30 -20 N
+P 2 0 1 10 70 -20 70 -180 N
+P 2 0 1 10 100 -100 70 -100 N
+X 1 1 -100 -100 100 R 0 0 0 1 P
+X 2 2 200 -100 100 L 0 0 0 1 P
+ENDDRAW
+ENDDEF
+#
+# Res1-dsi_shield
+#
+DEF Res1-dsi_shield R 0 60 Y Y 1 L N
+F0 "R" -10 -70 50 H V L BNN
+F1 "Res1-dsi_shield" 0 -320 60 H I L CNN
+F2 "" 0 -410 60 H I L CNN
+F3 "" 0 -500 60 H I L CNN
+F4 "8-Jun-2000" 0 -590 60 H I L CNN
+F5 "17-Jul-2002" 0 -680 60 H I L CNN
+F6 "Re-released for DXP Platform." 0 -770 60 H I L CNN
+F7 "AXIAL-0.3" 0 -860 60 H I L CNN
+F8 "Altium Limited" 0 -950 60 H I L CNN
+F9 "100" -10 -230 50 H V L BNN
+F10 "Yes" 0 -1130 60 H I L CNN
+F11 "=Value" 0 -1220 60 H I L CNN
+DRAW
+P 10 0 1 10 200 -100 160 -100 150 -120 130 -80 110 -120 90 -80 70 -120 50 -80 40 -100 0 -100 N
+X 1 1 -100 -100 100 R 0 0 0 1 P
+X 2 2 300 -100 100 L 0 0 0 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
