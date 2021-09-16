@@ -128,16 +128,17 @@ int main(void)
   while (1)
   {
     //HAL_UART_Transmit(&huart1,(uint8_t *)&a,1,0xFFFF);
-    printf("welcome to a new world! \r\n");
-    HAL_Delay(1000);
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    HAL_Delay(1000);
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    //printf("welcome to a new world! \r\n");
+    //HAL_Delay(1000);
+    //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    //HAL_Delay(1000);
+    //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 
     uint8_t   buf[256];
     uint32_t  len;
     if ((len = bulk_read(buf, sizeof(buf)))) {
       HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
+	  printf("recv:%s\r\n",buf);
       BULK_Transmit_FS(buf, len);
     } else {
       if (rxEOF) {
