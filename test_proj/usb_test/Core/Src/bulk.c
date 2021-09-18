@@ -1,4 +1,4 @@
-#include "stm32f4xx_hal.h"
+//#include "stm32f4xx_hal.h"
 #include "usb_device.h"
 #include "usbd_bulk_if.h"
 
@@ -39,13 +39,13 @@ static int Dequeue(struct Queue *q, uint8_t *data, uint32_t len){
 }
 
 int8_t Receive_FS (uint8_t* Buf, uint32_t *Len){
-  int count = *Len;
+//  int count = *Len;
 
   if (*Len && ((Enqueue(&rxQ, Buf, *Len) != *Len))) {
     // Shouldn't happen ! this is an overflow
   }
 
-  HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port, *Len == 0);
+  //HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port, *Len == 0);
   if (*Len == 0)
     rxEOF = 1;
   //  HAL_GPIO_WritePin(GPIOE,LD8_Pin, *Len == 64);

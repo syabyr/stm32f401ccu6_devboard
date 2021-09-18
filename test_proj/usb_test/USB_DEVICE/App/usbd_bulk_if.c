@@ -124,7 +124,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 
 static int8_t BULK_Init_FS    (void);
 static int8_t BULK_DeInit_FS  (void);
-static int8_t BULK_Control_FS (uint8_t cmd, uint8_t* pbuf, uint16_t length);
+//static int8_t BULK_Control_FS (uint8_t cmd, uint8_t* pbuf, uint16_t length);
 static int8_t BULK_Receive_FS (uint8_t* Buf, uint32_t *Len);
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_DECLARATION */
@@ -153,13 +153,13 @@ static int8_t BULK_Init_FS(void)
   // here's where the input buffer gets set to kick off 
   // the receiver
   USBD_BULK_SetRxBuffer(hUsbDevice_0,UserRxBufferFS);
-  HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port,1);
+  //HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port,1);
   return (USBD_OK);
 }
 
 static int8_t BULK_DeInit_FS(void)
 {
-  HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port,0);
+  //HAL_GPIO_WritePin(GPIOE,LED_GPIO_Port,0);
   hUsbDevice_0=NULL;
 /**
   * @brief  Manage the BULK class requests

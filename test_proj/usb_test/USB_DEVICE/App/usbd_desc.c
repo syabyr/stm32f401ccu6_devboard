@@ -65,11 +65,11 @@
 
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
-#define USBD_MANUFACTURER_STRING     "Indiana University CS"
+#define USBD_MANUFACTURER_STRING     "mybays"
 #define USBD_PID_FS     22336
-#define USBD_PRODUCT_STRING_FS       "IU CS Debug Monitor"
+#define USBD_PRODUCT_STRING_FS       "Bulk example"
 #define USBD_CONFIGURATION_STRING_FS "Bulk Config"
-#define USBD_INTERFACE_STRING_FS     "STlink v2 Interface (subset)"
+#define USBD_INTERFACE_STRING_FS     "Bulk Interface (subset)"
 
 #define USB_SIZ_BOS_DESC            0x0C
 

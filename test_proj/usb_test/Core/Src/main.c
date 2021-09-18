@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include "usbd_bulk_if.h"
 #include "unistd.h"
+#include "bulk.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,8 +37,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 void __libc_init_array(){}
-uint8_t BULK_Transmit_FS(uint8_t* Buf, uint16_t Len);
-uint32_t bulk_read(uint8_t *pBuf, uint32_t buf_len);
+
+
 extern volatile int rxEOF;
 
 void Toggle_Leds(void)
