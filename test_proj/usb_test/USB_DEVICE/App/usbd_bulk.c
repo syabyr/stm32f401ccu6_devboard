@@ -201,48 +201,68 @@ __ALIGN_BEGIN static uint8_t USBD_BULK_CfgFSDesc[USB_BULK_CONFIG_DESC_SIZ] __ALI
   * @param  cfgidx: Configuration index
   * @retval status
   */
-static uint8_t USBD_BULK_Init (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
+static uint8_t USBD_BULK_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
-  uint8_t ret = 0;
+  UNUSED(cfgidx);
   USBD_BULK_HandleTypeDef   *hcdc;
-  
+  hcdc = USBD_malloc(sizeof (USBD_BULK_HandleTypeDef));
+
+  if (hcdc == NULL)
   {
-    /* Open EP IN */
-    USBD_LL_OpenEP(pdev, BULK_IN_EP, USBD_EP_TYPE_BULK,
-                   BULK_DATA_FS_IN_PACKET_SIZE);
-    
-    /* Open EP OUT */
-    USBD_LL_OpenEP(pdev, BULK_OUT_EP, USBD_EP_TYPE_BULK,
-                   BULK_DATA_FS_OUT_PACKET_SIZE);
+    pdev->pClassData = NULL;
+    return (uint8_t)USBD_EMEM;
   }
 
-  pdev->pClassData = USBD_malloc(sizeof (USBD_BULK_HandleTypeDef));
-  
-  if(pdev->pClassData == NULL)
+  pdev->pClassData = (void *)hcdc;
+
+  if (pdev->dev_speed == USBD_SPEED_HIGH)
   {
-    ret = 1; 
+    /* Open EP IN */
+    (void)USBD_LL_OpenEP(pdev, BULK_IN_EP, USBD_EP_TYPE_BULK,
+                         BULK_DATA_FS_IN_PACKET_SIZE);
+
+    pdev->ep_in[BULK_IN_EP & 0xFU].is_used = 1U;
+    /* Open EP OUT */
+    (void)USBD_LL_OpenEP(pdev, BULK_OUT_EP, USBD_EP_TYPE_BULK,
+                         BULK_DATA_FS_OUT_PACKET_SIZE);
+
+    pdev->ep_out[BULK_OUT_EP & 0xFU].is_used = 1U;
   }
   else
   {
-    hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
-    
-    /* Init  physical Interface components */
+       /* Open EP IN */
+    (void)USBD_LL_OpenEP(pdev, BULK_IN_EP, USBD_EP_TYPE_BULK,
+                         BULK_DATA_FS_IN_PACKET_SIZE);
 
-    ((USBD_BULK_ItfTypeDef *)pdev->pUserData)->Init();
-    
-    /* Init Xfer states */
+    pdev->ep_in[BULK_IN_EP & 0xFU].is_used = 1U;
+    /* Open EP OUT */
+    (void)USBD_LL_OpenEP(pdev, BULK_OUT_EP, USBD_EP_TYPE_BULK,
+                         BULK_DATA_FS_OUT_PACKET_SIZE);
 
-    hcdc->TxState =0;
-    hcdc->RxState =0;
-       
-      /* Prepare Out endpoint to receive next packet */
-
-    USBD_LL_PrepareReceive(pdev,
-			   BULK_OUT_EP,
-			   hcdc->RxBuffer,
-			   BULK_DATA_FS_OUT_PACKET_SIZE);
+    pdev->ep_out[BULK_OUT_EP & 0xFU].is_used = 1U;
   }
-  return ret;
+
+  /* Init  physical Interface components */
+  ((USBD_BULK_ItfTypeDef *)pdev->pUserData)->Init();
+
+  /* Init Xfer states */
+  hcdc->TxState = 0U;
+  hcdc->RxState = 0U;
+
+  if (pdev->dev_speed == USBD_SPEED_HIGH)
+  {
+    /* Prepare Out endpoint to receive next packet */
+    (void)USBD_LL_PrepareReceive(pdev, BULK_OUT_EP, hcdc->RxBuffer,
+                                 BULK_DATA_FS_OUT_PACKET_SIZE);
+  }
+  else
+  {
+    /* Prepare Out endpoint to receive next packet */
+    (void)USBD_LL_PrepareReceive(pdev, BULK_OUT_EP, hcdc->RxBuffer,
+                                 BULK_DATA_FS_OUT_PACKET_SIZE);
+  }
+
+  return (uint8_t)USBD_OK;
 }
 
 /**
@@ -259,12 +279,13 @@ static uint8_t  USBD_BULK_DeInit (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   /* Close EP IN */
   (void)USBD_LL_CloseEP(pdev,BULK_IN_EP);
   pdev->ep_in[BULK_IN_EP & 0xFU].is_used = 0U;
-  
+
   /* Close EP OUT */
   USBD_LL_CloseEP(pdev, BULK_OUT_EP);
-  
+  pdev->ep_out[BULK_OUT_EP & 0xFU].is_used = 0U;
+
   /* DeInit  physical Interface components */
-  if(pdev->pClassData != NULL)
+  if (pdev->pClassData != NULL)
   {
     ((USBD_BULK_ItfTypeDef *)pdev->pUserData)->DeInit();
     (void)USBD_free(pdev->pClassData);
@@ -282,29 +303,73 @@ static uint8_t  USBD_BULK_DeInit (USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   * @retval status
   */
 static uint8_t  USBD_BULK_Setup (USBD_HandleTypeDef *pdev, 
-                                USBD_SetupReqTypedef *req)
+                              USBD_SetupReqTypedef *req)
 {
-  static uint8_t ifalt = 0;
-    
+  USBD_BULK_HandleTypeDef *hcdc = (USBD_BULK_HandleTypeDef *)pdev->pClassData;
+  //uint16_t len;
+  uint8_t ifalt = 0U;
+  uint16_t status_info = 0U;
+  USBD_StatusTypeDef ret = USBD_OK;
+
+  if (hcdc == NULL)
+  {
+    return (uint8_t)USBD_FAIL;
+  }
+
   switch (req->bmRequest & USB_REQ_TYPE_MASK)
   {
-  case USB_REQ_TYPE_STANDARD:
-    switch (req->bRequest)
-    {      
-    case USB_REQ_GET_INTERFACE :
-      USBD_CtlSendData (pdev,
-                        &ifalt,
-                        1);
+    case USB_REQ_TYPE_STANDARD:
+      switch (req->bRequest)
+      {
+        case USB_REQ_GET_STATUS:
+          if (pdev->dev_state == USBD_STATE_CONFIGURED)
+          {
+            (void)USBD_CtlSendData(pdev, (uint8_t *)&status_info, 2U);
+          }
+          else
+          {
+            USBD_CtlError(pdev, req);
+            ret = USBD_FAIL;
+          }
+          break;
+
+        case USB_REQ_GET_INTERFACE:
+          if (pdev->dev_state == USBD_STATE_CONFIGURED)
+          {
+            (void)USBD_CtlSendData(pdev, &ifalt, 1U);
+          }
+          else
+          {
+            USBD_CtlError(pdev, req);
+            ret = USBD_FAIL;
+          }
+          break;
+
+        case USB_REQ_SET_INTERFACE:
+          if (pdev->dev_state != USBD_STATE_CONFIGURED)
+          {
+            USBD_CtlError(pdev, req);
+            ret = USBD_FAIL;
+          }
+          break;
+
+        case USB_REQ_CLEAR_FEATURE:
+          break;
+
+        default:
+          USBD_CtlError(pdev, req);
+          ret = USBD_FAIL;
+          break;
+      }
       break;
-      
-    case USB_REQ_SET_INTERFACE :
+
+    default:
+      USBD_CtlError(pdev, req);
+      ret = USBD_FAIL;
       break;
-    }
- 
-  default: 
-    break;
   }
-  return USBD_OK;
+
+  return (uint8_t)ret;
 }
 
 /**
@@ -314,9 +379,17 @@ static uint8_t  USBD_BULK_Setup (USBD_HandleTypeDef *pdev,
   * @param  epnum: endpoint number
   * @retval status
   */
-static uint8_t  USBD_BULK_DataIn (USBD_HandleTypeDef *pdev, uint8_t epnum)
+static uint8_t  USBD_BULK_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 {
-  USBD_BULK_HandleTypeDef   *hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
+  USBD_BULK_HandleTypeDef *hcdc;
+  //PCD_HandleTypeDef *hpcd = pdev->pData;
+
+  if (pdev->pClassData == NULL)
+  {
+    return (uint8_t)USBD_FAIL;
+  }
+
+  hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
   
   if(pdev->pClassData != NULL)
   {
@@ -338,9 +411,9 @@ static uint8_t  USBD_BULK_DataIn (USBD_HandleTypeDef *pdev, uint8_t epnum)
   * @param  epnum: endpoint number
   * @retval status
   */
-static uint8_t  USBD_BULK_DataOut (USBD_HandleTypeDef *pdev, uint8_t epnum)
+static uint8_t USBD_BULK_DataOut(USBD_HandleTypeDef *pdev, uint8_t epnum)
 {
-  USBD_BULK_HandleTypeDef   *hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
+  USBD_BULK_HandleTypeDef *hcdc = (USBD_BULK_HandleTypeDef *)pdev->pClassData;
 
   if (pdev->pClassData == NULL)
   {
@@ -352,17 +425,10 @@ static uint8_t  USBD_BULK_DataOut (USBD_HandleTypeDef *pdev, uint8_t epnum)
 
   /* USB data will be immediately processed, this allow next USB traffic being
   NAKed till the end of the application Xfer */
-  if(pdev->pClassData != NULL)
-  {
-    ((USBD_BULK_ItfTypeDef *)pdev->pUserData)->Receive(hcdc->RxBuffer, 
-						      &hcdc->RxLength);
 
-    return USBD_OK;
-  }
-  else
-  {
-    return USBD_FAIL;
-  }
+  ((USBD_BULK_ItfTypeDef *)pdev->pUserData)->Receive(hcdc->RxBuffer, &hcdc->RxLength);
+
+  return (uint8_t)USBD_OK;
 }
 /**
   * @brief  USBD_BULK_EP0_RxReady
@@ -394,7 +460,7 @@ static uint8_t *USBD_BULK_GetFSCfgDesc (uint16_t *length)
   * @retval status
   */
 uint8_t  USBD_BULK_RegisterInterface  (USBD_HandleTypeDef   *pdev, 
-                                      USBD_BULK_ItfTypeDef *fops)
+                                   USBD_BULK_ItfTypeDef *fops)
 {
   if (fops == NULL)
   {
@@ -413,7 +479,7 @@ uint8_t  USBD_BULK_RegisterInterface  (USBD_HandleTypeDef   *pdev,
   * @retval status
   */
 uint8_t USBD_BULK_SetTxBuffer(USBD_HandleTypeDef *pdev,
-                                uint8_t  *pbuff,uint32_t length)
+                             uint8_t *pbuff,uint32_t length)
 {
   USBD_BULK_HandleTypeDef *hcdc = (USBD_BULK_HandleTypeDef *) pdev->pClassData;
 
@@ -455,34 +521,32 @@ uint8_t USBD_BULK_SetRxBuffer (USBD_HandleTypeDef *pdev, uint8_t *pbuff)
   * @retval status
   */
 uint8_t  USBD_BULK_TransmitPacket(USBD_HandleTypeDef *pdev)
-{      
-  USBD_BULK_HandleTypeDef   *hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
-  
-  if(pdev->pClassData != NULL)
+{
+  USBD_BULK_HandleTypeDef *hcdc = (USBD_BULK_HandleTypeDef *)pdev->pClassData;
+  USBD_StatusTypeDef ret = USBD_BUSY;
+
+  if (pdev->pClassData == NULL)
   {
-    if(((volatile uint32_t)hcdc->TxState) == 0)
-    {
-      /* Tx Transfer in progress */
-      hcdc->TxState = 1;
-      
-      /* Transmit next packet */
-      USBD_LL_Transmit(pdev,
-                       BULK_IN_EP,
-                       hcdc->TxBuffer,
-                       hcdc->TxLength);
-      
-      return USBD_OK;
-    }
-    else
-    {
-      return USBD_BUSY;
-    }
+    return (uint8_t)USBD_FAIL;
   }
-  else
+
+  if (hcdc->TxState == 0U)
   {
-    return USBD_FAIL;
+    /* Tx Transfer in progress */
+    hcdc->TxState = 1U;
+
+    /* Update the packet total length */
+    pdev->ep_in[BULK_IN_EP & 0xFU].total_length = hcdc->TxLength;
+
+    /* Transmit next packet */
+    (void)USBD_LL_Transmit(pdev, BULK_IN_EP, hcdc->TxBuffer, hcdc->TxLength);
+
+    ret = USBD_OK;
   }
+
+  return (uint8_t)ret;
 }
+
 /**
   * @brief  USBD_BULK_ReceivePacket
   *         prepare OUT Endpoint for reception
@@ -492,10 +556,17 @@ uint8_t  USBD_BULK_TransmitPacket(USBD_HandleTypeDef *pdev)
 uint8_t  USBD_BULK_ReceivePacket(USBD_HandleTypeDef *pdev)
 {
   USBD_BULK_HandleTypeDef   *hcdc = (USBD_BULK_HandleTypeDef*) pdev->pClassData;
-  /* Suspend or Resume USB Out process */
+
   if (pdev->pClassData == NULL)
   {
     return (uint8_t)USBD_FAIL;
+  }
+
+  if (pdev->dev_speed == USBD_SPEED_HIGH)
+  {
+    /* Prepare Out endpoint to receive next packet */
+    (void)USBD_LL_PrepareReceive(pdev, BULK_OUT_EP, hcdc->RxBuffer,
+                                 BULK_DATA_FS_OUT_PACKET_SIZE);
   }
   else
   {
