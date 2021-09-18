@@ -89,7 +89,8 @@ int main(void)
   libusb_device *my_device = NULL;
 
   result = libusb_init(NULL);
-  libusb_set_debug(NULL, 3);
+  //libusb_set_debug(NULL, 3);
+  libusb_set_option(NULL,LIBUSB_OPTION_LOG_LEVEL,3);
 
   ssize_t count = libusb_get_device_list(NULL, &list);
   for (int i = 0; i < count; i++) {
