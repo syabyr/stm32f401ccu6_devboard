@@ -41,8 +41,8 @@ extern "C" {
 /** @defgroup usbd_bulk_Exported_Defines
   * @{
   */
-#define BULK_IN_EP                        0x81U  /* EP1 for data IN */
-#define BULK_OUT_EP                       0x02U  /* EP1 for data OUT */
+#define BULK_IN_EP                                   0x81U  /* EP1 for data IN */
+#define BULK_OUT_EP                                  0x01U  /* EP1 for data OUT */
 
 
 /* BULK Endpoints parameters: you can fine tune these values depending on the needed baudrates and performance. */
@@ -50,7 +50,7 @@ extern "C" {
 #define BULK_DATA_FS_MAX_PACKET_SIZE                 64U  /* Endpoint IN & OUT Packet size */
 #define BULK_CMD_PACKET_SIZE                         8U  /* Control Endpoint Packet size */ 
 
-#define USB_BULK_CONFIG_DESC_SIZ          32
+#define USB_BULK_CONFIG_DESC_SIZ                         32
 
 #define BULK_DATA_FS_IN_PACKET_SIZE                  BULK_DATA_FS_MAX_PACKET_SIZE
 #define BULK_DATA_FS_OUT_PACKET_SIZE                 BULK_DATA_FS_MAX_PACKET_SIZE
