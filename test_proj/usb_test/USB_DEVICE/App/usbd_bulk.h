@@ -46,15 +46,28 @@ extern "C" {
 
 
 /* BULK Endpoints parameters: you can fine tune these values depending on the needed baudrates and performance. */
-#define BULK_DATA_HS_MAX_PACKET_SIZE                 64
+#define BULK_DATA_HS_MAX_PACKET_SIZE                 512U  /* Endpoint IN & OUT Packet size */
 #define BULK_DATA_FS_MAX_PACKET_SIZE                 64U  /* Endpoint IN & OUT Packet size */
 #define BULK_CMD_PACKET_SIZE                         8U  /* Control Endpoint Packet size */ 
 
-#define USB_BULK_CONFIG_DESC_SIZ                         32
+#define USB_BULK_CONFIG_DESC_SIZ                         32U
 
 #define BULK_DATA_FS_IN_PACKET_SIZE                  BULK_DATA_FS_MAX_PACKET_SIZE
 #define BULK_DATA_FS_OUT_PACKET_SIZE                 BULK_DATA_FS_MAX_PACKET_SIZE
 
+
+/**
+  * @}
+  */
+
+
+/** @defgroup USBD_CORE_Exported_TypesDefinitions
+  * @{
+  */
+
+/**
+  * @}
+  */
 typedef struct _USBD_BULK_Itf
 {
   int8_t (* Init)(void);
@@ -66,7 +79,7 @@ typedef struct _USBD_BULK_Itf
 
 typedef struct
 {
-  uint32_t data[BULK_DATA_HS_MAX_PACKET_SIZE/4U];      /* Force 32bits alignment */
+  uint32_t data[BULK_DATA_FS_MAX_PACKET_SIZE/4U];      /* Force 32bits alignment */
   
   uint8_t  *RxBuffer;
   uint8_t  *TxBuffer;
