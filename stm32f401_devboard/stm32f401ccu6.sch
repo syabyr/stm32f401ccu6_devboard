@@ -719,9 +719,9 @@ Wire Wire Line
 Wire Wire Line
 	1450 1650 1350 1650
 Text GLabel 1450 1550 2    50   Input ~ 0
-PA11
-Text GLabel 1450 1650 2    50   Input ~ 0
 PA12
+Text GLabel 1450 1650 2    50   Input ~ 0
+PA11
 $Comp
 L Regulator_Linear:LM1117-3.3 U2
 U 1 1 5FCA0EAE
